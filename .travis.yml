@@ -6,4 +6,4 @@ before_install:
   - docker build -t skaldat/docker-kubernetes-course-app -f Dockerfile.dev .
 
 script:
-  - docker run skaldat/docker-kubernetes-course-app npm run test -- --coverage
+  - docker run -e CI=true skaldat/docker-kubernetes-course-app npm run test -- --coverage
