@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t skaldat/docker-kubernetes-course-app -f Dockerfile.dev .
+
+script:
+  - docker run skaldat/docker-kubernetes-course-app npm run test -- --converage
